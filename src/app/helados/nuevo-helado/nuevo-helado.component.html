@@ -1,0 +1,13 @@
+<form #modelo="ngForm" (ngSubmit)="onSubmit(dato1.value, dato2.value)" novalidate>
+    <div>
+      <label>Sabor</label>
+      <input name="sabor" #dato1 type="text">
+    </div>
+    <div>
+      <label>Color</label>
+      <input name="color" #dato2  type="text">
+    </div>
+    <div>
+      <input type="submit" value="GUARDAR">
+    </div>
+  </form>
