@@ -1,11 +1,26 @@
-<form #modelo="ngForm" (ngSubmit)="onSubmit(dato1.value, dato2.value)" novalidate>
+<div *ngIf="heladoEntrante" >
+  <form #modelo="ngForm" (ngSubmit)="actualizar(heladoEntrante)" novalidate>
     <div>
       <label>Sabor</label>
-      <input name="sabor" #dato1 type="text">
+      <input name="sabor" #sabor type="text" [(ngModel)]="heladoEntrante.sabor" >
     </div>
     <div>
       <label>Color</label>
-      <input name="color" #dato2  type="text">
+      <input name="color" #color  type="text" [(ngModel)]="heladoEntrante.color">
+    </div>
+    <div>
+      <input type="submit" value="ACTUALIZAR">
+    </div>
+  </form>
+</div>
+<form *ngIf="!heladoEntrante" #modelo="ngForm" (ngSubmit)="onSubmit(sabor.value, color.value)" novalidate>
+    <div>
+      <label>Sabor</label>
+      <input name="sabor" #sabor type="text">
+    </div>
+    <div>
+      <label>Color</label>
+      <input name="color" #color  type="text">
     </div>
     <div>
       <input type="submit" value="GUARDAR">

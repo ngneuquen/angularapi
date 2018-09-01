@@ -1,8 +1,10 @@
 import {Injectable} from '@angular/core';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient,HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs';
+
 @Injectable()
 export class HeladosService{
+
     url :string;
     headers:HttpHeaders;
     constructor(private _http:HttpClient){
@@ -10,6 +12,7 @@ export class HeladosService{
         this.headers= new HttpHeaders().set('Content-Type','application/json');
 
     }
+    
     // LIST
     list():Observable<any>{
         return this._http.get(this.url,{headers:this.headers});
@@ -19,6 +22,12 @@ export class HeladosService{
     }
     show(id):Observable<any>{
         return this._http.get(this.url+id,{headers:this.headers});
+    }
+    update(id,helado):Observable<any>{
+        return this._http.put(this.url+id,helado,{headers:this.headers})
+    }
+    delete(id):Observable<any>{
+        return this._http.delete(this.url+id,{headers:this.headers});
     }
 }
 

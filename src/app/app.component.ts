@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- 
-
+  public datosHelado;
+  appHeladoActualizando(helado:any) {
+    console.log('app', helado)
+    this.datosHelado = helado;
+  }
 }

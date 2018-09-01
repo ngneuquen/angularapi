@@ -1,13 +1,13 @@
 
 <ul>
-    <li *ngFor="let m of modelos">
-      <div>DATO 1:</div>
-      <div>{{m.dato1}}</div>
-      <div>DATO 2:</div>
-      <div>{{m.dato2}}</div>
+    <li *ngFor="let h of helados">
+      <div>Sabor:</div>
+      <div>{{h.sabor}}</div>
+      <div>Color:</div>
+      <div>{{h.color}}</div>
       <div>
-        <button (click)="update(m)">ACTUALIZAR</button>
-        <button (click)="delete(m)">BORRAR</button>
+        <button (click)="update(h)">ACTUALIZAR</button>
+        <button (click)="delete(h)">BORRAR</button>
       </div>
     </li>
     

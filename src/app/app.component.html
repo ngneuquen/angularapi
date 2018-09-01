@@ -5,7 +5,7 @@
     <img src="assets/2560283_0.jpg" alt="">
   </div>
   <div>
-    <app-lista-helados></app-lista-helados>
-    <app-nuevo-helado></app-nuevo-helado>
+    <app-nuevo-helado [heladoEntrante]="datosHelado"></app-nuevo-helado>
+    <app-lista-helados (heladoParaActualizar)="appHeladoActualizando($event)"></app-lista-helados>
   </div>
 </div>
